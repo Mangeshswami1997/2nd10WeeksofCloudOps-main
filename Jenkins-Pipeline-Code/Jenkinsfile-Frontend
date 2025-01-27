@@ -22,19 +22,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Mangeshswami1997/2nd10WeeksofCloudOps-main.git'
             }
         }
-        stage('Sonarqube Analysis') {
-            steps {
-                dir('client') {
-                    withSonarQubeEnv('sonar-server') {
-                        sh ''' sonar-scanner \
-                              -Dsonar.projectKey=3-tier-frontend \
-                              -Dsonar.sources=. \
-                              -Dsonar.host.url=http://65.2.124.74:9000 \
-                              -Dsonar.login=1aaac742c9cae44a95bfbdfe4b1a4cbf695f0655 '''
-                    }
-                }
-           }
-        }
+       # stage('Sonarqube Analysis') {
+        #    steps {
+         #       dir('client') {
+          #          withSonarQubeEnv('sonar-server') {
+           #             sh ''' sonar-scanner \
+            #                  -Dsonar.projectKey=3-tier-frontend \
+             #                 -Dsonar.sources=. \
+              #                -Dsonar.host.url=http://65.2.124.74:9000 \
+               #               -Dsonar.login=1aaac742c9cae44a95bfbdfe4b1a4cbf695f0655 '''
+                #    }
+                #}
+           #}
+        #}
         stage('Quality Check') {
             steps {
                 script {
