@@ -55,7 +55,7 @@ pipeline {
             }
             steps {
                 dir('kubernetes-files') {
-                    withCredentials([string(credentialsId: 'pat', variable: 'git_token')]) {
+                    withCredentials([string(credentialsId: 'pat', variable: 'git-pat-token')]) {
                         sh '''
                             git config user.email "mangesh.swami987@gmail.com"
                             git config user.name "Mangeshswami1997"
@@ -64,7 +64,7 @@ pipeline {
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" frontend-deploy-service.yaml
                             git add .
                             git commit -m "Update deployment Image to version \${BUILD_NUMBER}"
-                            git push https://${git_token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                            git push https://${git-pat-token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
         
                         '''
                     }
