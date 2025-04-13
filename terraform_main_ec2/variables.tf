@@ -1,13 +1,13 @@
 variable "region" {
   description = "AWS region"
   type = string
-  default = "us-east-1"
+  default = "ap-south-1"
 }
 
 variable "vpc-name" {
   description = "VPC Name for our Jumphost server"
   type = string
-  default = "Jumphost-vpc"
+  default = "Jumphost-vpc means to bastion host like"
 }
 
 variable "igw-name" {
