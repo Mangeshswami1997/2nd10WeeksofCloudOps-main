@@ -6,9 +6,9 @@ resource "aws_db_instance" "rds" {
   engine_version         = "8.0.32"
   instance_class         = "db.t3.micro"
   multi_az               = true
-  db_name                = "mydb"
+  db_name                = "devopsdb"
   username               = "admin"
-  password               = "srivardhan"
+  password               = "mangesh123"
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.security-group.id]
   depends_on = [ aws_db_subnet_group.sub-grp ]
