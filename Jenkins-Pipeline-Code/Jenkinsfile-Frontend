@@ -84,7 +84,7 @@ pipeline {
             }
             steps {
                 dir('kubernetes-files') {
-                    withCredentials([string(credentialsId: 'my-git-pattoken', variable: 'git_token')]) {
+                    withCredentials([string(credentialsId: 'devops-project-git-token', variable: 'git_token')]) {
                         sh '''
                             git config user.email "mangesh.swami987@gmail.com"
                             git config user.name "Mangeshswami1997"
