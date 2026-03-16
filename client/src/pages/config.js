@@ -1,3 +1,3 @@
 // const API_BASE_URL = "http://localhost:8800";
-const API_BASE_URL = "http://api.mangesh.shop";
+const API_BASE_URL = "http://api.kart24.shop";
 export default API_BASE_URL;
